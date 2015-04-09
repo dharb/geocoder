@@ -12,7 +12,7 @@ module Geocoder::Result
     end
 
     def state_code
-      @data['address']['adminDistrict']
+      @data['address']['adminDistrict'].present? ? @data['address']['adminDistrict'] : @data['address']['adminDistrict2']
     end
 
     alias_method :state, :state_code
