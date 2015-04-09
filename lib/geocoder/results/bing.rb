@@ -8,7 +8,7 @@ module Geocoder::Result
     end
 
     def city
-      @data['address']['locality']
+      @data['address']['locality'].present? ? @data['address']['locality'] : @data['address']['adminDistrict2']
     end
 
     def state_code
